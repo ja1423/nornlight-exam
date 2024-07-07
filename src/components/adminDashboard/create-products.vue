@@ -56,14 +56,14 @@
 
 <script setup>
 import { useRouter } from "vue-router";
-import { useProductStore } from "@/stores/productsStore";
+// import { useProductStore } from "@/stores/productsStore";
 import { onMounted, reactive } from "vue";
 
 onMounted(() => {
   productsStore.fetchProducts();
 });
 
-const productsStore = useProductStore();
+const productsStore = productsStore();
 
 const product = reactive({
   title: "",
