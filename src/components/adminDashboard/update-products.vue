@@ -60,14 +60,14 @@
 </template>
 
 <script setup>
-import Loader from "../Loader.vue";
+import Loading from "../Loading.vue";
 import { onMounted } from "vue";
 import { useRoute, useRouter } from "vue-router";
-import { useProductStore } from "@/stores/productsStore";
+
 
 const id = useRoute().params.id;
-const router = useRouter();
-const productsStore = useProductStore();
+const router = router();
+const productsStore = productsStore();
 
 const update = (id, product) => {
   productsStore.updateById(id, product);
